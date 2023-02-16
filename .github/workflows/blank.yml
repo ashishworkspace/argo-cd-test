@@ -39,6 +39,7 @@ jobs:
             cat values.yaml
             git add .
             git commit -m "Updated values.yaml"
+            cat valuse.yaml
             echo ${{ secrets.USERNAME }}
             echo ${{ github.sha }}
             echo ${{ secrets.REPO_NAME }}
