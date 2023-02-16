@@ -39,4 +39,4 @@ jobs:
             cat values.yaml
             git add .
             git commit -m "Updated values.yaml"
-            git push https://${{ USERNAME }}:${{ PASSWORD }}@github.com/${{ USERNAME }}/${{ REPO_NAME }}.git
+            git push https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
