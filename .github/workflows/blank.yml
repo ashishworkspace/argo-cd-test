@@ -38,4 +38,4 @@ jobs:
             sed -i 's@image_name@'"${{ github.sha }}"'@' values.yaml
             cat values.yaml
             git add .
-            git commit -m 'Updated values.yaml
+            git commit -m "Updated values.yaml"
