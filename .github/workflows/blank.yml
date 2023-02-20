@@ -44,6 +44,7 @@ jobs:
           run: |
             git config --global user.email "ashishizofficial@gmail.com"
             git config --global user.name "Ashish Kumar"
+            git pull
             echo ${{ github.sha }}
             sed -i 's@image_name@'"${{ github.sha }}"'@' values.yaml
             git add -A
