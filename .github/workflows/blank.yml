@@ -34,14 +34,7 @@ jobs:
         run: |
             git config user.email ashishizofficial@gamil.com
             git config user.name Ashish Kumar
-            cat values.yaml
             sed -i 's@image_name@'"${{ github.sha }}"'@' values.yaml
-            cat values.yaml
             git add .
-            git commit -m "Updated values.yaml"
-            cat valuse.yaml
-            echo ${{ secrets.USERNAME }}
-            echo ${{ github.sha }}
-            echo ${{ secrets.REPO_NAME }}
-            
+            git commit -m "Updated values.yaml"            
             git push https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
