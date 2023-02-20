@@ -22,7 +22,7 @@ jobs:
         - uses: actions/checkout@v3
           with:
             repository: ashishworkspace/argo-cd-pipeline
-            ref: 'master'
+            ref: 'main'
             token: ${{ secrets.PASSWORD }}
         - name: setup git config
           run: |
