@@ -15,26 +15,22 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-#     build-and-push:
-#       runs-on: ubuntu-latest
-#       steps:
-#         - uses: actions/checkout@v3
-#         - name: Login to DockerHub
-#           uses: docker/login-action@v2
-#           with:
-#             username: ${{ secrets.DOCKER_USERNAME }}
-#             password: ${{ secrets.DOCKER_PASSWORD }}
-#         - name: nginx
-#           uses: docker/build-push-action@v3
-#           with:
-#             push: true
-#             tags: ashishizofficial/nginx:${{ github.sha }}
-#             file: ./Dockerfile
-#             context: .
-#   # This workflow contains a single job called "build"
     update-manifest-stage:
       runs-on: ubuntu-latest
       steps:
+        - uses: actions/checkout@v3
+        - name: Login to DockerHub
+          uses: docker/login-action@v2
+          with:
+            username: ${{ secrets.DOCKER_USERNAME }}
+            password: ${{ secrets.DOCKER_PASSWORD }}
+        - name: nginx
+          uses: docker/build-push-action@v3
+          with:
+            push: true
+            tags: ashishizofficial/nginx:${{ github.sha }}
+            file: ./Dockerfile
+            context: .
         - uses: actions/checkout@v3
           with:
             repository: ashishworkspace/argo-cd-pipeline
