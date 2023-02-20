@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: nginx:{{ .Values.image_id }}
+        image: ashishizofficial/nginx:{{ .Values.image_id }}
         resources:
           limits:
             memory: "128Mi"
