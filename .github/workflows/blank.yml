@@ -38,5 +38,4 @@ jobs:
             git add .
             git commit -m "Updated values.yaml"      
             cat values.yaml
-     #   git remote set-url origin https://${{ secrets.USERNAME }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
-     #  git push https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
+            git push https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git HEAD:master
