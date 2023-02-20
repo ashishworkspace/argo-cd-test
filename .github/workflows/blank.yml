@@ -44,7 +44,7 @@ jobs:
           run: |
             git config --global user.email "ashishizofficial@gmail.com"
             git config --global user.name "Ashish Kumar"
-            sed -i "s#${{ github.actor }}.*#${{ github.actor }}/nginx:${{ github.sha }}#g"  values.yaml
+            sed -i "s#ashishizofficial.*#ashishizofficial/nginx:${{ github.sha }}#g"  values.yaml
             git add -A
             git commit -am "Update image for - ${{ github.sha }}"
         - run: echo ${{ github }}
