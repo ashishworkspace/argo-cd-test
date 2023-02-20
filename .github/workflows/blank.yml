@@ -36,5 +36,6 @@ jobs:
             git config user.name Ashish Kumar
             sed -i 's@image_name@'"${{ github.sha }}"'@' values.yaml
             git add .
-            git commit -m "Updated values.yaml"            
+            git commit -m "Updated values.yaml"      
+            git remote set-url origin https://${{ secrets.USERNAME }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
             git push https://${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}@github.com/${{ secrets.USERNAME }}/${{ secrets.REPO_NAME }}.git
