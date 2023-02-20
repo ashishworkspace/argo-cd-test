@@ -15,9 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  
-  # This workflow contains a single job called "build"
-    update-manifest-stage:
+    build-and-push:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
@@ -33,6 +31,10 @@ jobs:
             tags: ashishizofficial/nginx:${{ github.sha }}
             file: ./Dockerfile
             context: .
+  # This workflow contains a single job called "build"
+    update-manifest-stage:
+      runs-on: ubuntu-latest
+      steps:
         - uses: actions/checkout@v3
           with:
             repository: ashishworkspace/argo-cd-pipeline
